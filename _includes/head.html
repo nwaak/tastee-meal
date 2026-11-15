@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>{{ page.title }} - Tastee Meal</title>
+<title>{% if page.title and page.title != "" %}{{ page.title }} - {% endif %}Tastee Meal</title>
 
 <!-- Bootstrap 4.6 CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
