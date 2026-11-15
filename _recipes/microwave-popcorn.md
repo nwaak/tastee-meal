@@ -2,7 +2,7 @@
 layout: recipe
 title: "Microwave Popcorn"
 category: "snacks"
-author: "Self"
+author: "Nolan"
 description: "A quick and easy microwave popcorn recipe with melted butter and salt."
 prep_time: "1 min"
 cook_time: "2 mins"
@@ -19,7 +19,7 @@ ingredient_sections:
 
 instructions:
   - title: "Pop the Corn"
-    text: "Place the yellow popcorn in your microwave-safe container. For a black silicone container, microwave for 1 minute and 45 seconds. For a glass container, microwave for 0 minutes and 00 seconds."
+    text: "Place the yellow popcorn in your microwave-safe container. For a black silicone container, microwave for 1 minute and 45 seconds. For a glass container, microwave for 2 minutes and 15 seconds."
   - title: "Melt the Butter"
     text: "After the popcorn is popped, melt the butter in a small dish for 15 to 30 seconds."
   - title: "Combine"
