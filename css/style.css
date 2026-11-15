@@ -27,9 +27,10 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 2rem;
     color: #ffffff;
-    padding: 0.75rem 1rem 0.5rem 0;
+    padding: 0.75rem 0;
     position: relative;
     line-height: 1.1;
+    width: 200px;
 }
 
 .navbar-custom .navbar-brand:hover {
