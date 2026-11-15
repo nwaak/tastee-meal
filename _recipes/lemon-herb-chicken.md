@@ -2,7 +2,7 @@
 layout: recipe
 title: "Lemon Herb Chicken & Quinoa Bowl"
 category: "dinner"
-author: "User 1"
+author: "Grandma"
 description: "Pan-seared chicken breast marinated in garlic, lemon zest, and oregano over fluffy quinoa with roasted vegetables."
 prep_time: "15 mins"
 cook_time: "20 mins"
