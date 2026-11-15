@@ -8,7 +8,7 @@ prep_time: "10 mins"
 cook_time: "10 mins"
 total_time: "20 mins"
 servings: "4 cups"
-image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80"
+image: "https://images.unsplash.com/photo-1767065703745-f3c33524605a?auto=format&fit=crop&w=1200&q=80"
 
 ingredient_sections:
   - section_title: "Sauce Ingredients"
