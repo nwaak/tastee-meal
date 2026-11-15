@@ -22,5 +22,5 @@ instructions:
   - title: "Combine Ingredients"
     text: "In a medium bowl, combine tomato sauce, garlic, oregano, and basil, and mix all together. Spread mixture over pizza crust, if desired."
 
-notes: "Store any leftover sauce in an airtight container in the refrigerator for up to 5 days."
+notes: "Store any leftover sauce in an airtight container in the freezer."
 ---
