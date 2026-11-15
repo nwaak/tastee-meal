@@ -1,0 +1,110 @@
+---
+layout: default
+---
+
+<!-- Recipe Header -->
+<div class="row mb-4">
+    <div class="col-lg-8">
+        <div class="mb-2">
+            <span class="badge badge-category">{{ page.category | capitalize }}</span>
+            <span class="badge badge-author ml-1">By {{ page.author }}</span>
+        </div>
+        <h1 class="font-weight-bold mb-2">{{ page.title }}</h1>
+        <p class="lead text-muted">
+            {{ page.description }}
+        </p>
+    </div>
+</div>
+
+<!-- Time & Yield Meta Bar -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="meta-box p-3">
+            <div class="row text-center text-sm-left">
+                <div class="col-6 col-sm-3 mb-2 mb-sm-0">
+                    <small class="text-uppercase text-muted d-block font-weight-bold">Prep Time</small>
+                    <span>{{ page.prep_time }}</span>
+                </div>
+                <div class="col-6 col-sm-3 mb-2 mb-sm-0">
+                    <small class="text-uppercase text-muted d-block font-weight-bold">Cook Time</small>
+                    <span>{{ page.cook_time }}</span>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <small class="text-uppercase text-muted d-block font-weight-bold">Total Time</small>
+                    <span>{{ page.total_time }}</span>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <small class="text-uppercase text-muted d-block font-weight-bold">Servings</small>
+                    <span>{{ page.servings }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Image -->
+<div class="row mb-5">
+    <div class="col-12">
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="recipe-hero-img w-100 rounded">
+    </div>
+</div>
+
+<!-- Two-Column Layout: Ingredients (Left) & Instructions (Right) -->
+<div class="row">
+
+    <!-- Ingredients Column -->
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h4 class="font-weight-bold mb-3">Ingredients</h4>
+                <p class="text-muted small no-print">Click items to check off while cooking</p>
+
+                {% for section in page.ingredient_sections %}
+                    <h6 class="text-uppercase text-muted small font-weight-bold {% unless forloop.first %}mt-4{% else %}mt-3{% endunless %}">{{ section.section_title }}</h6>
+                    <ul class="list-unstyled {% if forloop.last %}mb-0{% endif %}">
+                        {% for item in section.items %}
+                            <li>
+                                <label class="ingredient-item d-flex align-items-center mb-0">
+                                    <input type="checkbox" class="mr-2">
+                                    <span>{{ item }}</span>
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions & Notes Column -->
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+                <h4 class="font-weight-bold mb-4">Instructions</h4>
+
+                {% for step in page.instructions %}
+                    <div class="d-flex {% unless forloop.last %}mb-4{% endunless %}">
+                        <span class="step-number">{{ forloop.index }}</span>
+                        <div>
+                            <h6 class="font-weight-bold">{{ step.title }}</h6>
+                            <p class="mb-0">{{ step.text }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Personal Cooking Notes -->
+        {% if page.notes %}
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="font-weight-bold mb-2">Kitchen Notes</h5>
+                <p class="text-muted small mb-0">
+                    {{ page.notes }}
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+</div>

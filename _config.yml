@@ -1,1 +1,6 @@
 permalink: pretty
+
+collections:
+  recipes:
+    output: true
+    permalink: /recipes/:name/
