@@ -1,0 +1,192 @@
+/* Import Google Fonts to match the banner's script logo and clean sans-serif UI */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Pacifico&display=swap');
+
+:root {
+    --brand-green: #84C43E;
+    --brand-green-dark: #72AE31;
+    --text-dark: #2c3e50;
+    --text-muted: #6c757d;
+    --bg-light: #f9fbf8;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Navbar Styling matching the reference image */
+.navbar-custom {
+    background-color: var(--brand-green);
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-custom .navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #ffffff;
+    padding: 0.75rem 1rem 0.5rem 0;
+    position: relative;
+    line-height: 1.1;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: #ffffff;
+}
+
+/* Custom curved swoosh under the logo */
+.logo-swoosh {
+    display: block;
+    width: 100%;
+    height: 10px;
+    margin-top: -2px;
+}
+
+.navbar-custom .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-custom .nav-link {
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1.75rem 1.25rem !important;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-item.active .nav-link {
+    background-color: var(--brand-green-dark);
+}
+
+/* Search & Filter Controls */
+.form-control:focus {
+    border-color: var(--brand-green);
+    box-shadow: 0 0 0 0.2rem rgba(132, 196, 62, 0.25);
+}
+
+.btn-author-filter {
+    color: var(--text-dark);
+    border-color: #ced4da;
+    background-color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-author-filter:hover {
+    background-color: #eef7e3;
+    border-color: var(--brand-green);
+}
+
+.btn-author-filter.active {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    color: #ffffff;
+}
+
+/* Recipe Cards & Badges */
+.recipe-card {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+}
+
+.recipe-card-img {
+    height: 190px;
+    object-fit: cover;
+}
+
+.badge-category {
+    background-color: #eef7e3;
+    color: #55881e;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+}
+
+.badge-author {
+    background-color: #f1f3f5;
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+}
+
+.btn-brand {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-brand:hover {
+    background-color: var(--brand-green-dark);
+    border-color: var(--brand-green-dark);
+    color: #ffffff;
+}
+
+/* Recipe Detail Page Specifics */
+.recipe-hero-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.meta-box {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-left: 4px solid var(--brand-green);
+    border-radius: 4px;
+}
+
+.ingredient-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e9ecef;
+    cursor: pointer;
+}
+
+.ingredient-item input:checked + span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--brand-green);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Clean Print Styling for Kitchen Use */
+@media print {
+    .navbar-custom, .no-print, footer {
+        display: none !important;
+    }
+    body {
+        background-color: #ffffff;
+    }
+    .container {
+        max-width: 100%;
+    }
+}
