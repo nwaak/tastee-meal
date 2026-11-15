@@ -31,6 +31,7 @@ body {
     position: relative;
     line-height: 1.1;
     width: 200px;
+    margin: 0 auto;
 }
 
 .navbar-custom .navbar-brand:hover {
