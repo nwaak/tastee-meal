@@ -38,6 +38,6 @@ instructions:
 notes: "Keeps well in airtight glass containers for up to 4 days. Store the cucumbers and tomatoes separately if packing for lunch so they stay crisp when reheating the chicken and quinoa."
 
 old_recipe_cards:
-  - "/tastee-meal/images/cards/lemon-chicken-card-1.jpg"
-  - "/tastee-meal/images/cards/lemon-chicken-card-2.jpg"
+  - "/images/cards/lemon-chicken-card-1.jpg"
+  - "/images/cards/lemon-chicken-card-2.jpg"
 ---
