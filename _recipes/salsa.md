@@ -25,8 +25,14 @@ ingredient_sections:
       - "1/4 tsp ground cumin"
 
 instructions:
+  - title: "Prep"
+    text: "Chop the onion and fresh cilantro."
+  - title: "Drain"
+    text: "Open the cans of whole tomatoes and Rotel diced tomatoes with green chilies, draining off the excess liquid so the salsa stays thick."
+  - title: "Load the Blender"
+    text: Add the whole tomatoes to the blender first, followed by the drained Rotel, and finish with the chopped onion, cilantro, and remaining ingredients.
   - title: "Blend"
-    text: "Mix everything in a blender."
+    text: "Pulse until you reach your desired consistency, leaving it slightly chunky or blending until smooth."
 
 notes: "For the best flavor, cover and refrigerate the salsa for at least 24 hours before serving."
 
