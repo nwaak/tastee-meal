@@ -8,7 +8,7 @@ prep_time: "10 min"
 cook_time: "25 mins"
 total_time: "35 min"
 servings: "6"
-image: "https://unsplash.com/photos/a-close-up-of-a-spoon-in-a-bowl-of-food-MR4747QM9zM"
+image: "https://images.unsplash.com/photo-1737315551939-d2564cd7c7a0?auto=format&fit=crop&w=1200&q=80"
 
 ingredient_sections:
   - section_title: "Rice"

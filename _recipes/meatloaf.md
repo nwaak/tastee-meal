@@ -8,7 +8,7 @@ prep_time: "15 min"
 cook_time: "1 hr"
 total_time: "1 hr 15 min"
 servings: "1 loaf, 6 slices"
-image: "https://unsplash.com/photos/a-loaf-of-meatloaf-on-a-cutting-board-with-a-sprig-of-u0gs_AzC9CQ"
+image: "https://images.unsplash.com/photo-1705945021699-7374c3fd34cb?auto=format&fit=crop&w=1200&q=80"
 
 ingredient_sections:
   - section_title: "Meatloaf"
