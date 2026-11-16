@@ -28,7 +28,7 @@ instructions:
   - title: "Blend"
     text: "Mix everything in a blender."
 
-notes: ""
+notes: "For the best flavor, cover and refrigerate the salsa for at least 24 hours before serving."
 
 old_recipe_cards:
   - "/images/cards/salsa-card-1.jpg"
