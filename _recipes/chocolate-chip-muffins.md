@@ -8,7 +8,7 @@ prep_time: ""
 cook_time: "20-25 mins"
 total_time: ""
 servings: "6 muffins"
-image: "https://images.unsplash.com/photo-1472073818961-c5665e88ef83?auto=format&fit=crop&w=1200&q=80"
+image: "https://images.unsplash.com/photo-1785737785436-b7cfe498b599?auto=format&fit=crop&w=1200&q=80"
 
 ingredient_sections:
   - section_title: "Batter"

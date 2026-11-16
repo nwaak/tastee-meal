@@ -8,7 +8,7 @@ prep_time: ""
 cook_time: "25-30 mins"
 total_time: ""
 servings: "6 rolls"
-image: "https://images.unsplash.com/photo-1616168166506-5c9d05034472?auto=format&fit=crop&w=1200&q=80"
+image: "https://images.unsplash.com/photo-1686207855146-c3ffe2166d40?auto=format&fit=crop&w=1200&q=80"
 
 ingredient_sections:
   - section_title: "Dough"
