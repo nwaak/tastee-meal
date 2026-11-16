@@ -8,7 +8,7 @@ prep_time: ""
 cook_time: ""
 total_time: ""
 servings: "1"
-image: "https://images.unsplash.com/photo-1663854478296-dd00b6257021?auto=format&fit=crop&w=1200&q=80"
+image: "https://images.unsplash.com/photo-1541288097308-7b8e3f58c4c6?auto=format&fit=crop&w=1200&q=80"
 
 ingredient_sections:
   - section_title: "Dry Ingredients"
