@@ -130,3 +130,45 @@ layout: default
     </div>
 
 </div>
+
+<!-- Schema.org JSON-LD Structured Data for Cooking Mode / Smart Displays -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": {{ page.title | jsonify }},
+  "image": [
+    {{ page.image | relative_url | jsonify }}
+  ],
+  "author": {
+    "@type": "Person",
+    "name": {{ page.author | jsonify }}
+  },
+  "description": {{ page.description | jsonify }},
+  "prepTime": "{{ page.prep_time | replace: ' ', '' | upcase }}",
+  "cookTime": "{{ page.cook_time | replace: ' ', '' | upcase }}",
+  "totalTime": "{{ page.total_time | replace: ' ', '' | upcase }}",
+  "recipeYield": {{ page.servings | jsonify }},
+  "recipeCategory": {{ page.category | capitalize | jsonify }},
+  "recipeIngredient": [
+    {% assign first_ingredient = true %}
+    {% for section in page.ingredient_sections %}
+      {% for item in section.items %}
+        {% unless first_ingredient %},{% endunless %}
+        {{ item | jsonify }}
+        {% assign first_ingredient = false %}
+      {% endfor %}
+    {% endfor %}
+  ],
+  "recipeInstructions": [
+    {% for step in page.instructions %}
+    {
+      "@type": "HowToStep",
+      "name": {{ step.title | jsonify }},
+      "text": {{ step.text | jsonify }},
+      "url": "{{ page.url | relative_url }}#step-{{ forloop.index }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
