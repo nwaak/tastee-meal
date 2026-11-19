@@ -68,9 +68,9 @@
         <!-- Recipe Grid -->
         <div class="row" id="recipeGrid">
             {% for recipe in site.recipes %}
-            <div class="col-6 col-md-6 col-lg-4 mb-4 recipe-item" 
-                 data-category="{{ recipe.category | downcase | strip }}" 
-                 data-author="{{ recipe.author | downcase | remove: ' ' }}">
+            <div class="col-6 col-md-6 col-lg-4 mb-4 recipe-item"
+                data-category="{{ recipe.category | downcase | strip }}"
+                data-author="{{ recipe.author | downcase | remove: ' ' }}">
                 <div class="card recipe-card h-100">
                     <img src="{{ recipe.image }}" class="card-img-top recipe-card-img" alt="{{ recipe.title }}">
                     <div class="card-body d-flex flex-column">
@@ -82,12 +82,13 @@
                             <small class="text-muted">{{ recipe.total_time }}</small>
                         </div>
                         <h5 class="card-title font-weight-bold">
-                            <a href="{{ recipe.url | relative_url }}" class="text-dark text-decoration-none">{{ recipe.title }}</a>
+                            <a href="{{ recipe.url | relative_url }}" class="text-dark text-decoration-none stretched-link">
+                                {{ recipe.title }}
+                            </a>
                         </h5>
                         <p class="card-text text-muted small flex-grow-1">
                             {{ recipe.description }}
                         </p>
-                        <a href="{{ recipe.url | relative_url }}" class="btn btn-brand btn-sm btn-block mt-3">View Recipe</a>
                     </div>
                 </div>
             </div>
