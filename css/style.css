@@ -25,13 +25,20 @@ body {
 
 .navbar-custom .navbar-brand {
     font-family: 'Pacifico', cursive;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
     color: #ffffff;
-    padding: 0.75rem 0;
+    padding: 0.75rem 0 1.00rem 0;
     position: relative;
-    line-height: 1.1;
+    /*line-height: 1.1;*/
     width: 200px;
     margin: 0 auto;
+}
+
+@media (min-height: 600px) {
+    .navbar-custom .navbar-brand {
+        width: 150px;
+        padding: 0.25rem 0 0.50rem 0;
+    }
 }
 
 .navbar-custom .navbar-brand:hover {
