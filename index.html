@@ -16,9 +16,9 @@
         <div class="row mb-4 align-items-end">
             
             <div class="col-lg-8 mb-3 mb-lg-0 order-lg-12">
-                <div class="form-row justify-content-lg-end align-items-center">
+                <div class="d-flex justify-content-lg-end align-items-center">
                     <!-- Search Input -->
-                    <div class="col-sm-5 col-md-4 mb-2 mb-sm-0 order-sm-2">
+                    <div class="flex-grow-1 flex-sm-grow-0 mr-2" style="min-width: 220px;">
                         <input
                             type="text"
                             id="recipeSearch"
@@ -26,30 +26,62 @@
                             style="height: 35px;"
                             enterkeyhint="search"
                             placeholder="Search recipes..."
-                            >
+                        >
                     </div>
 
-                    <!-- Dynamic Category Dropdown -->
-                    <div class="col-sm-4 col-md-3 mb-2 mb-md-0 order-sm-3">
-                        <select id="categoryFilter" class="form-control form-control-sm" style="height: 35px;">
-                            <option value="all">All Categories</option>
-                            {% assign raw_categories = site.recipes | map: "category" | uniq | sort %}
-                            {% for cat in raw_categories %}
-                                {% if cat and cat != "" %}
-                                    {% assign clean_cat = cat | downcase | strip %}
-                                    <option value="{{ clean_cat }}">{{ clean_cat | capitalize }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                    </div>
-                    
-                    <!-- Author Toggle Buttons -->
-                    <div class="col-12 col-sm-auto order-sm-1">
-                        <div class="btn-group d-flex d-sm-inline-flex" role="group" aria-label="Filter by creator" id="authorFilterGroup">
-                            <button type="button" class="btn btn-author-filter active" data-author="all">All</button>
-                            <button type="button" class="btn btn-author-filter" data-author="laura">Laura</button>
-                            <button type="button" class="btn btn-author-filter" data-author="grandma">Grandma</button>
-                            <button type="button" class="btn btn-author-filter" data-author="nolan">Nolan</button>
+                    <!-- Combined Filter Dropdown -->
+                    <div class="dropdown">
+                        <button 
+                            class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center position-relative" 
+                            type="button" 
+                            id="combinedFilterDropdown" 
+                            data-toggle="dropdown" 
+                            aria-haspopup="true" 
+                            aria-expanded="false"
+                            style="height: 35px; width: 38px;"
+                            title="Filter recipes"
+                        >
+                            <!-- Sliders-H SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor" aria-hidden="true">
+                                <path d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z"/>
+                            </svg>
+                            <!-- Active Filter Dot Indicator -->
+                            <span id="filterActiveBadge" class="position-absolute bg-primary rounded-circle d-none" style="width: 8px; height: 8px; top: 4px; right: 4px;"></span>
+                        </button>
+
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow-sm" aria-labelledby="combinedFilterDropdown" style="min-width: 260px;">
+                            
+                            <!-- Creator / Author Section -->
+                            <div class="mb-3">
+                                <label class="small font-weight-bold text-uppercase text-muted mb-2 d-block">Creator</label>
+                                <div class="btn-group btn-group-sm d-flex" role="group" aria-label="Filter by creator" id="authorFilterGroup">
+                                    <button type="button" class="btn btn-outline-secondary active" data-author="all">All</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-author="laura">Laura</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-author="grandma">Grandma</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-author="nolan">Nolan</button>
+                                </div>
+                            </div>
+
+                            <!-- Category Section -->
+                            <div class="mb-3">
+                                <label for="categoryFilter" class="small font-weight-bold text-uppercase text-muted mb-2 d-block">Category</label>
+                                <select id="categoryFilter" class="form-control form-control-sm">
+                                    <option value="all">All Categories</option>
+                                    {% assign raw_categories = site.recipes | map: "category" | uniq | sort %}
+                                    {% for cat in raw_categories %}
+                                        {% if cat and cat != "" %}
+                                            {% assign clean_cat = cat | downcase | strip %}
+                                            <option value="{{ clean_cat }}">{{ clean_cat | capitalize }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <!-- Reset Link -->
+                            <div class="border-top pt-2 text-right">
+                                <button type="button" class="btn btn-link btn-sm text-muted p-0" id="resetFiltersBtn">Reset filters</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -104,13 +136,31 @@
         const authorButtons = document.querySelectorAll('#authorFilterGroup .btn');
         const cards = document.querySelectorAll('.recipe-item');
         const recipeCount = document.getElementById('recipeCount');
+        const filterActiveBadge = document.getElementById('filterActiveBadge');
+        const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
 
         let activeAuthor = 'all';
+
+        // Prevent dropdown from closing when clicking inside it
+        dropdownMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        function updateFilterBadge(category, author) {
+            if (category !== 'all' || author !== 'all') {
+                filterActiveBadge.classList.remove('d-none');
+            } else {
+                filterActiveBadge.classList.add('d-none');
+            }
+        }
 
         function filterRecipes() {
             const query = searchInput.value.toLowerCase();
             const category = categoryFilter.value;
             let visibleCount = 0;
+
+            updateFilterBadge(category, activeAuthor);
 
             cards.forEach(card => {
                 const text = card.innerText.toLowerCase();
@@ -141,17 +191,23 @@
             });
         });
 
+        resetFiltersBtn.addEventListener('click', () => {
+            activeAuthor = 'all';
+            categoryFilter.value = 'all';
+            authorButtons.forEach(b => b.classList.remove('active'));
+            document.querySelector('#authorFilterGroup .btn[data-author="all"]').classList.add('active');
+            filterRecipes();
+        });
+
         searchInput.addEventListener('input', filterRecipes);
         categoryFilter.addEventListener('change', filterRecipes);
-        
-        // Search Close on iOS
-        const recipeSearch = document.getElementById('recipeSearch');
 
-        recipeSearch.addEventListener('keydown', (e) => {
+        // Search Close on iOS
+        searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
-                recipeSearch.blur();
-                filterRecipes(recipeSearch.value); // your search function
+                searchInput.blur();
+                filterRecipes();
             }
         });
     </script>
