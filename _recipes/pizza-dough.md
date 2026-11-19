@@ -31,7 +31,7 @@ instructions:
   - title: "Bake"
     text: "Bake for 12 minutes."
 
-notes: ""
+notes: "If using a Ninja Combi, divide your mixed and raised pizza dough in half and freeze the rest for later. Roll out the dough and place it in the deep tray, then add your favorite sauce and toppings. Set the appliance to Pizza mode to preheat, insert the tray, and bake for 13 minutes until golden and bubbly."
 
 old_recipe_cards:
   - "/images/cards/pizza-dough-card-1.jpg"
