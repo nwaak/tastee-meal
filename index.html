@@ -10,7 +10,7 @@
     {% include nav.html %}
 
     <!-- Main Content -->
-    <main class="container my-5">
+    <main class="container my-4 my-lg-5">
         
         <!-- Header & Filter Controls -->
         <div class="row mb-4 align-items-end">
@@ -23,7 +23,7 @@
                     </div>
 
                     <!-- Dynamic Category Dropdown -->
-                    <div class="col-sm-4 col-md-3 order-sm-3">
+                    <div class="col-sm-4 col-md-3 mb-2 mb-md-0 order-sm-3">
                         <select id="categoryFilter" class="form-control form-control-sm" style="height: 35px;">
                             <option value="all">All Categories</option>
                             {% assign raw_categories = site.recipes | map: "category" | uniq | sort %}
@@ -37,7 +37,7 @@
                     </div>
                     
                     <!-- Author Toggle Buttons -->
-                    <div class="col-auto mb-2 mb-md-0 order-sm-1">
+                    <div class="col-12 col-sm-auto d-flex d-sm-inline-flex order-sm-1">
                         <div class="btn-group" role="group" aria-label="Filter by creator" id="authorFilterGroup">
                             <button type="button" class="btn btn-author-filter active" data-author="all">All</button>
                             <button type="button" class="btn btn-author-filter" data-author="laura">Laura</button>
