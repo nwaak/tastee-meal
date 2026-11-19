@@ -46,7 +46,7 @@
                     <!-- Author Toggle Buttons -->
                     <div class="col-12 col-sm-auto order-sm-1">
                         
-                        <div class="dropdown d-inline-block" id="authorFilterDropdown">
+                        <div class="dropdown d-inline-block" id="authorFilterGroup">
                             <button class="btn btn-author-filter dropdown-toggle d-inline-flex align-items-center"
                                     type="button"
                                     id="authorFilterMenuButton"
@@ -54,13 +54,12 @@
                                     aria-haspopup="true"
                                     aria-expanded="false"
                                     aria-label="Filter by creator">
-                                <!-- Filter icon (inline SVG works without an icon font dependency) -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                     <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z"/>
                                 </svg>
                                 <span class="sr-only">Filter by creator</span>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="authorFilterMenuButton" aria-label="Filter by creator" id="authorFilterGroup">
+                            <div class="dropdown-menu" aria-labelledby="authorFilterMenuButton">
                                 <button type="button" class="dropdown-item btn-author-filter active" data-author="all">All</button>
                                 <button type="button" class="dropdown-item btn-author-filter" data-author="laura">Laura</button>
                                 <button type="button" class="dropdown-item btn-author-filter" data-author="grandma">Grandma</button>
