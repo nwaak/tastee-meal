@@ -1,3 +1,9 @@
+title: Tastee Meal
+url: "https://www.tasteemeal.com"
+repository: nwaak/tastee-meal.github.io
+github:
+  is_project_page: false
+
 permalink: pretty
 
 collections:
