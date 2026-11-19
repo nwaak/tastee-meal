@@ -15,25 +15,15 @@
         <!-- Header & Filter Controls -->
         <div class="row mb-4 align-items-end">
             
-            <div class="col-lg-8 order-lg-12">
+            <div class="col-lg-8 mb-3 mb-lg-0 order-lg-12">
                 <div class="form-row justify-content-lg-end align-items-center">
-                    <!-- Author Toggle Buttons -->
-                    <div class="col-auto mb-2 mb-md-0">
-                        <div class="btn-group" role="group" aria-label="Filter by creator" id="authorFilterGroup">
-                            <button type="button" class="btn btn-author-filter active" data-author="all">All</button>
-                            <button type="button" class="btn btn-author-filter" data-author="laura">Laura</button>
-                            <button type="button" class="btn btn-author-filter" data-author="grandma">Grandma</button>
-                            <button type="button" class="btn btn-author-filter" data-author="nolan">Nolan</button>
-                        </div>
-                    </div>
-
                     <!-- Search Input -->
-                    <div class="col-sm-5 col-md-4 mb-2 mb-sm-0">
+                    <div class="col-sm-5 col-md-4 mb-2 mb-sm-0 order-sm-2">
                         <input type="text" id="recipeSearch" class="form-control form-control-sm" style="height: 35px;" placeholder="Search recipes...">
                     </div>
 
                     <!-- Dynamic Category Dropdown -->
-                    <div class="col-sm-4 col-md-3">
+                    <div class="col-sm-4 col-md-3 order-sm-3">
                         <select id="categoryFilter" class="form-control form-control-sm" style="height: 35px;">
                             <option value="all">All Categories</option>
                             {% assign raw_categories = site.recipes | map: "category" | uniq | sort %}
@@ -45,10 +35,20 @@
                             {% endfor %}
                         </select>
                     </div>
+                    
+                    <!-- Author Toggle Buttons -->
+                    <div class="col-auto mb-2 mb-md-0 order-sm-1">
+                        <div class="btn-group" role="group" aria-label="Filter by creator" id="authorFilterGroup">
+                            <button type="button" class="btn btn-author-filter active" data-author="all">All</button>
+                            <button type="button" class="btn btn-author-filter" data-author="laura">Laura</button>
+                            <button type="button" class="btn btn-author-filter" data-author="grandma">Grandma</button>
+                            <button type="button" class="btn btn-author-filter" data-author="nolan">Nolan</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="col-lg-4 mb-3 mb-lg-0 order-lg-1">
+            <div class="col-lg-4 order-lg-1">
                 <h1 class="h3 font-weight-bold mb-1">All Recipes</h1>
                 {% assign total_recipes = site.recipes | size %}
                 <p class="text-muted small mb-0" id="recipeCount">Showing {{ total_recipes }} {% if total_recipes == 1 %}recipe{% else %}recipes{% endif %}</p>
