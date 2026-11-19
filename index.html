@@ -74,14 +74,7 @@
                 <div class="card recipe-card h-100">
                     <img src="{{ recipe.image }}" class="card-img-top recipe-card-img" alt="{{ recipe.title }}">
                     <div class="card-body d-flex flex-column">
-                        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-2">
-                            <div>
-                                <span class="badge badge-category">{{ recipe.category | capitalize }}</span>
-                                <span class="badge badge-author ml-1">By {{ recipe.author }}</span>
-                            </div>
-                            <small class="text-muted mt-1 mt-sm-0">{{ recipe.total_time }}</small>
-                        </div>
-                        <h5 class="card-title font-weight-bold">
+                        <h5 class="card-title font-weight-bold mb-2">
                             <a href="{{ recipe.url | relative_url }}" class="text-dark text-decoration-none stretched-link">
                                 {{ recipe.title }}
                             </a>
@@ -89,6 +82,13 @@
                         <p class="card-text text-muted small flex-grow-1 d-none d-md-flex">
                             {{ recipe.description }}
                         </p>
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between">
+                            <div>
+                                <span class="badge badge-category">{{ recipe.category | capitalize }}</span>
+                                <span class="badge badge-author ml-1">By {{ recipe.author }}</span>
+                            </div>
+                            <small class="text-muted mt-1 mt-sm-0">{{ recipe.total_time }}</small>
+                        </div>
                     </div>
                 </div>
             </div>
