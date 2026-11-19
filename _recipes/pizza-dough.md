@@ -19,7 +19,7 @@ ingredient_sections:
       - "1/2 tbsp sugar"
       - "1/2 tsp salt"
       - "1 tbsp vegetable oil"
-      - "1 cup lukewarm water"
+      - "3/4 to 1 cup lukewarm water"
 
 instructions:
   - title: "Mix Ingredients"
