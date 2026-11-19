@@ -19,7 +19,14 @@
                 <div class="form-row justify-content-lg-end align-items-center">
                     <!-- Search Input -->
                     <div class="col-sm-5 col-md-4 mb-2 mb-sm-0 order-sm-2">
-                        <input type="text" id="recipeSearch" class="form-control form-control-sm" style="height: 35px;" placeholder="Search recipes...">
+                        <input
+                            type="text"
+                            id="recipeSearch"
+                            class="form-control form-control-sm"
+                            style="height: 35px;"
+                            enterkeyhint="search"
+                            placeholder="Search recipes..."
+                            >
                     </div>
 
                     <!-- Dynamic Category Dropdown -->
@@ -135,6 +142,17 @@
 
         searchInput.addEventListener('input', filterRecipes);
         categoryFilter.addEventListener('change', filterRecipes);
+        
+        // Search Close on iOS
+        const recipeSearch = document.getElementById('recipeSearch');
+
+        recipeSearch.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                recipeSearch.blur();
+                filterRecipes(recipeSearch.value); // your search function
+            }
+        });
     </script>
 </body>
 </html>
