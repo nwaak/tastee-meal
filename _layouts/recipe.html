@@ -5,14 +5,14 @@ layout: default
 <!-- Recipe Header -->
 <div class="row mb-4">
     <div class="col-lg-8">
-        <div class="mb-2">
-            <span class="badge badge-category">{{ page.category | capitalize }}</span>
-            <span class="badge badge-author ml-1">By {{ page.author }}</span>
-        </div>
         <h1 class="font-weight-bold mb-2">{{ page.title }}</h1>
         <p class="lead text-muted">
             {{ page.description }}
         </p>
+        <div class="mb-2">
+            <span class="badge badge-category">{{ page.category | capitalize }}</span>
+            <span class="badge badge-author ml-1">By {{ page.author }}</span>
+        </div>
     </div>
 </div>
 
@@ -21,11 +21,11 @@ layout: default
     <div class="col-12">
         <div class="meta-box p-3">
             <div class="row text-center text-sm-left">
-                <div class="col-6 col-sm-3 mb-2 mb-sm-0">
+                <div class="col-6 col-sm-3 mb-4 mb-sm-0">
                     <small class="text-uppercase text-muted d-block font-weight-bold">Prep Time</small>
                     <span>{{ page.prep_time }}</span>
                 </div>
-                <div class="col-6 col-sm-3 mb-2 mb-sm-0">
+                <div class="col-6 col-sm-3 mb-4 mb-sm-0">
                     <small class="text-uppercase text-muted d-block font-weight-bold">Cook Time</small>
                     <span>{{ page.cook_time }}</span>
                 </div>
