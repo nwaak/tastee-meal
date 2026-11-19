@@ -3,7 +3,7 @@ layout: recipe
 title: "Pizza Dough"
 category: "dinner"
 author: "Laura"
-description: "Simple homemade pizza dough made in the bread maker. Makes one 12" pizza."
+description: "Simple homemade pizza dough made in the bread maker. Makes one 12 in pizza."
 prep_time: "5 min"
 cook_time: "12 mins"
 total_time: "1 hr 30 min"
