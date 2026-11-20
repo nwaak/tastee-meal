@@ -103,7 +103,8 @@ body {
 /* Recipe Cards & Badges */
 .recipe-card {
     border: 1px solid #e9ecef;
-    border-radius: 6px;
+    /*border-radius: 6px;*/
+    border-radius: 12px;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     background: #ffffff;
     overflow: hidden;
@@ -119,6 +120,11 @@ body {
 .recipe-card-img {
     height: 190px;
     object-fit: cover;
+}
+
+.badge {
+    border-radius: 1rem;
+    padding: 0.5em 1.25em;
 }
 
 .badge-category {
